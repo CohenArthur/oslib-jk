@@ -1,3 +1,5 @@
+// FIXME: Add documentation
+
 // FIXME: Should return a Result
 func shell(s: string) -> int {
     shell_execute_string(s)
