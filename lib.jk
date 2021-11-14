@@ -1,0 +1,11 @@
+current_os = jinko.os();
+
+switch current_os {
+    "linux": incl linux_jk
+    "osx": incl osx_jk
+    "windows": incl windows_jk
+    _ : {
+            // Or jinko.error() ?
+            eprintln("Unhandled OS configuration {current_os}. Aborting")
+        },
+}
