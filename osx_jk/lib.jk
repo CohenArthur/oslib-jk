@@ -1,1 +1,11 @@
 eprintln("OSX is currently unhandled")
+
+// FIXME: Figure out how to link with libc on OSX. The remainder of the code should
+// be similar
+// link_with("libc.so.6");
+
+ext func system(s: string) -> int;
+
+func shell_execute_string(s: string) -> int {
+    system(s)
+}

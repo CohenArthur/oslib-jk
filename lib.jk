@@ -9,3 +9,5 @@ switch current_os {
             eprintln("Unhandled OS configuration {current_os}. Aborting")
         },
 }
+
+incl shell
