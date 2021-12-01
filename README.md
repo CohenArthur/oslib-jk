@@ -2,6 +2,10 @@
 
 OS specific library for the jinko programming language.
 
+# __WARNING__
+
+This library is currently only available on linux!
+
 # Usage
 
 Add the following line to your script in order to use this library:
