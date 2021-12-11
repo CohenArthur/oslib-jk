@@ -1,3 +1,9 @@
+ext func system(s: string) -> int;
+
+func shell_execute_string(s: string) -> int {
+    system(s)
+}
+
 // FIXME: Add documentation
 
 // FIXME: Should return a Result
@@ -10,17 +16,37 @@ type Cmd(s: string);
 
 func cmd(command: string) -> Cmd {
     // FIXME: Make sure `command` does not contain any spaces
-    Cmd { s = command }
+    Cmd(s: command)
 }
 
 func with_arg(cmd: Cmd, arg: string) -> Cmd {
     mut new_s = concat(cmd.s, " ");
     new_s = new_s.concat(arg);
 
-    Cmd { s = new_s }
+    Cmd(s: new_s)
 }
 
 // FIXME: Should return a Result
 func execute(cmd: Cmd) -> int {
     shell(cmd.s)
+}
+
+test shell_execute_cmd() {
+    shell("pwd");
+
+    // FIXME: Redirect this output
+    // FIXME: Add assertions
+}
+
+test shell_builder_pattern() {
+    mut c = cmd("ls");
+    c = c.with_arg("thisdir");
+
+    // FIXME: Add assertions
+}
+
+test shell_builder_pattern_inline() {
+    mut c = cmd("ls").with_arg("-l").with_arg("-a").with_arg("thidir");
+
+    // FIXME: Add assertions
 }
