@@ -13,3 +13,4 @@
 link_with("libc.so.6");
 
 incl shell
+incl env
