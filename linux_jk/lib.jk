@@ -1,7 +1,0 @@
-link_with("libc.so.6");
-
-ext func system(s: string) -> int;
-
-func shell_execute_string(s: string) -> int {
-    system(s)
-}
